@@ -14,7 +14,7 @@ function runRequest(done){
 
 function buildServer(path, done){
   var handler = Handler({
-    path:'/tmp/hello.txt'
+    path:path
   })
   var server = http.createServer(handler)
   server.listen(8080, function(){
@@ -23,6 +23,8 @@ function buildServer(path, done){
 }
 
 tape('the server should increment the file each time it is hit', function(t){
+
+  fs.unlinkSync('/tmp/hello.txt')
 
   buildServer('/tmp/hello.txt', function(err, server){
     runRequest(function(err, count){
@@ -42,9 +44,10 @@ tape('the server should increment the file each time it is hit', function(t){
 })
 
 tape('the server should pick up an existing file and use that', function(t){
-  fs.writeFileSync('/tmp/hello2.txt', '56', 'utf8')
+  fs.writeFileSync('/tmp/hellotest2.txt', '56', 'utf8')
 
-  buildServer('/tmp/hello2.txt', function(err, server){
+  buildServer('/tmp/hellotest2.txt', function(err, server){
+    
     runRequest(function(err, count){
       t.equal(count, "57", "the first count is 57")
       runRequest(function(err, count){
