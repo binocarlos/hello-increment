@@ -2,16 +2,16 @@ var fs = require('fs');
 
 module.exports = function(opts){
   opts = opts || {}
-  var path = opts.path || '/tmp/helloincrement.txt'
+  var file = opts.file || '/tmp/helloincrement.txt'
 
   var number = 0
-  if(fs.existsSync(path)){
-    var number = parseInt(fs.readFileSync(path, 'utf8'))
+  if(fs.existsSync(file)){
+    number = parseInt(fs.readFileSync(file, 'utf8'))
   }
 
   return function(req, res){
     number++
-    fs.writeFileSync(path, number, 'utf8')
+    fs.writeFileSync(file, number, 'utf8')
     res.end("" + number)
   } 
 }
