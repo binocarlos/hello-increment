@@ -1,0 +1,26 @@
+{
+  "name": "hello-increment",
+  "version": "1.0.0",
+  "description": "A very simple app that increments a number on disk - for testing purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binocarlos/hello-increment.git"
+  },
+  "keywords": [],
+  "author": "Kai Davenport",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binocarlos/hello-increment/issues"
+  },
+  "homepage": "https://github.com/binocarlos/hello-increment",
+  "dependencies": {},
+  "devDependencies": {
+    "concat-stream": "^1.4.8",
+    "hyperquest": "^1.2.0",
+    "tape": "^4.0.0"
+  }
+}
