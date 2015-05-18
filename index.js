@@ -12,7 +12,7 @@ var args = require('minimist')(process.argv, {
 });
 
 var handler = Handler({
-  file:opts.file
+  file:args.file
 })
 
 var server = http.createServer(handler)
