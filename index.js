@@ -15,7 +15,7 @@ var handler = Handler({
   file:opts.file
 })
 
-var server http.createServer(handler)
+var server = http.createServer(handler)
 
 server.listen(args.port, function(){
   console.log('server listening on port: ' + args.port)
