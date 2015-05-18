@@ -14,7 +14,7 @@ function runRequest(done){
 
 function buildServer(path, done){
   var handler = Handler({
-    path:path
+    file:path
   })
   var server = http.createServer(handler)
   server.listen(8080, function(){
