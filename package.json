@@ -17,7 +17,9 @@
     "url": "https://github.com/binocarlos/hello-increment/issues"
   },
   "homepage": "https://github.com/binocarlos/hello-increment",
-  "dependencies": {},
+  "dependencies": {
+    "minimist": "^1.1.1"
+  },
   "devDependencies": {
     "concat-stream": "^1.4.8",
     "hyperquest": "^1.2.0",
